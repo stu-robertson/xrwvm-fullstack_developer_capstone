@@ -74,7 +74,9 @@ def registration(request):
         User.objects.get(username=username)
         username_exist = True
     except Exception as e:
-    logger.debug("New user '{}' encountered. Error: {}".format(username, e))
+        logger.debug(
+            "New user '{}' encountered. Error: {}".format(username, e)
+            )
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
